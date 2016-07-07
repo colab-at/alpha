@@ -1,2 +1,8 @@
 // main.scss
+@import "variables";
+@import "compass";
+@import "compass/reset";
 
+h1 {
+	font-size: 10em;
+}

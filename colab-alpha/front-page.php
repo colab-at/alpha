@@ -13,21 +13,20 @@
 	        	<h1>Discussion</h1>
 
 	        	<?php
-						$posts = getPostsByCat( 'discussion' );
-						foreach ( $posts as $post ) :
-							$id =				$post['id'];
-							$title =	 		$post['title'];
-							$name = 			$post['name'];
-							$image = 			$post['image']['full'];
-							$author = 			$post['author'];
-							$content = 			$post['content'];
-						?>
+				$posts = getPostsByCat( 'discussion' );
+				foreach ( $posts as $post ) :
+					$id =				$post['id'];
+					$title =	 		$post['title'];
+					$name = 			$post['name'];
+					$image = 			$post['image']['full'];
+					$author = 			$post['author'];
+					$content = 			$post['content'];
+				?>
 
 	        	<article class="post">
 	        		<?php print $content ?>
 
 	        		<?php global $withcomments; $withcomments = true; comments_template(); ?>
-	        		
 	        	</article>
 
 	        	<?php endforeach; ?>
@@ -54,6 +53,5 @@
         	<h1>Colab</h1>
         	<p>Sidebar</p>
         </section>
-
 
 <?php get_footer(); ?>
