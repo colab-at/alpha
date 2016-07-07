@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Colab</title>
+        <title>Project</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
@@ -28,24 +28,10 @@
 
         <header class="main-header">
 
-            <h1 class="logo">
-                <a href="<?php bloginfo('url'); ?>">
-                    <img class="svg" src="<?php echo get_template_directory_uri() ?>/img/logo_blue.svg" alt="Colab" > 
-                </a>
-            </h1>
-
-            <?php get_template_part( 'main', 'nav' ); ?>
-
-            <button class="open-menu round"><svg class="icon-menu"><use xlink:href="<?php bloginfo('stylesheet_directory'); ?>/img/icons.svg#icon-menu"></use></svg></button>
-        
+            <h1>Project page</h1>
+            
         </header>
 
-        <div class="alt-logo wrap">
-            <div class="logo">
-                <a href="<?php bloginfo('url'); ?>">
-                    <img class="svg" src="<?php echo get_template_directory_uri() ?>/img/logo.svg" alt="Colab" > 
-                </a>
-            </div>
-        </div>
+
 
         
