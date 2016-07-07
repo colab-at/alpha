@@ -11,11 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300,400italic">
-    <?php if ( is_front_page() ) : ?>
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/frontpage.css">
-    <?php else : ?>
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/page.css">
-    <?php endif; ?>
+        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/frontpage.css">
 
         <?php wp_head(); ?>
 
