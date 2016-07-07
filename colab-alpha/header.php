@@ -11,7 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300,400italic">
-        <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/frontpage.css">
+        <!-- <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/main.css"> -->
 
         <?php wp_head(); ?>
 
@@ -21,13 +21,3 @@
         <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-        <header class="main-header">
-
-            <h1>Project page</h1>
-            
-        </header>
-
-
-
-        
