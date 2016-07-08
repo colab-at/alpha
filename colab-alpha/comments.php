@@ -6,7 +6,8 @@ endif;
 
 <section class="comments">
 
-	<!-- <h3>Comments</h3> -->
+<!-- 	<h3>Comments</h3>
+ -->	
 
 <?php if ( is_user_logged_in() ) : ?>
 
