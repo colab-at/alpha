@@ -23,17 +23,18 @@
         <script type="text/javascript">
             // AJAXified commenting system
             jQuery('document').ready(function($) {
-                var commentform = $('#commentform'); // find the comment form
+                var commentform = $('.comment-form'); // find the comment form
                 commentform.prepend('<div id="comment-status"></div>'); // add info panel before the form to provide feedback or errors
                 var statusdiv = $('#comment-status'); // define the infopanel
 
-                commentform.submit(function() {
+                commentform.submit(function(handler) {
                     // Add a status message
                     statusdiv.html('<p>Please wait...</p>');
                     // Serialize and store form data in a variable
-                    var formdata = commentform.serialize();
-                    // Extract action URL from commentform
-                    var formurl = commentform.attr('action');
+                    var form = $(handler.target);
+                    var formdata = form.serialize();
+                    // Extract action URL from form
+                    var formurl = form.attr('action');
                     // Post Form with data
                     $.ajax({
                         type: 'post',
@@ -45,35 +46,35 @@
                         success: function(data, textStatus) {
                             if (data == "success") {
                                 statusdiv.html('');
-                                addNewComment(commentform);
+                                addNewComment(form, $(handler.target.parentElement));
                             }
                             else {
                                 statusdiv.html('<p class="comment-error">An error occurred. Please try again in a few seconds.</p>');
                             }
-                            commentform.find('textarea[name=comment]').val('');
+                            form.find('textarea[name=comment]').val('');
                         }
                     });
                     return false;
                 });
             });
 
-            function addNewComment(commentform) {
+            function addNewComment(commentform, respond) {
                 var depth = 1;
-                var commentParent = $(commentform).children('fieldset').children('#comment_parent').val();
+                var commentParent = commentform.children('fieldset').children('#comment_parent').val();
                 if (commentParent != "0") depth++;
                 var tempComment = '<article class="comment byuser comment-author-admin bypostauthor even thread-even depth-' + depth + '" id="comment-temp">';
                 if (depth > 1) tempComment += '<div class="wrapper">';
                 tempComment += '<header class="author-meta comment">';
-                tempComment += $('#respond').children('form').children('.comment-meta').children('.author-thumb').html();
-                tempComment += $('#respond').children('form').children('.comment-meta').children('.meta').html();
+                tempComment += respond.children('form').children('.comment-meta').children('.author-thumb').html();
+                tempComment += respond.children('form').children('.comment-meta').children('.meta').html();
                 tempComment += '</header>';
-                tempComment += '<p>' + $(commentform).children('#comment').val() + '</p>';
+                tempComment += '<p>' + commentform.children('#comment').val() + '</p>';
                 if (depth > 1) {
                     tempComment += '</div>';
                     $(tempComment).insertAfter('#comment-' + commentParent);
                 }
                 else {
-                    $(tempComment).insertAfter('#respond');
+                    $(tempComment).insertAfter(respond);
                 }
             }
         </script>
