@@ -40,8 +40,8 @@
 									if ($post_id) {
 										$catId = get_cat_ID('discussion');
 										wp_set_post_terms($post_id, array($catId), 'category', true);
-								    wp_redirect(home_url());
-								    exit;
+								    // wp_redirect(home_url());
+								    // exit;
 									}
 								}
 							?>
