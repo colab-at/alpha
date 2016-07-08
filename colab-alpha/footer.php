@@ -70,10 +70,10 @@
                 tempComment += '<p>' + $(commentform).children('#comment').val() + '</p>';
                 if (depth > 1) {
                     tempComment += '</div>';
-                    $(tempComment).insertAfter('#respond');
+                    $(tempComment).insertAfter('#comment-' + commentParent);
                 }
                 else {
-                    $(tempComment).insertAfter('#comment-' + commentParent);
+                    $(tempComment).insertAfter('#respond');
                 }
             }
         </script>
