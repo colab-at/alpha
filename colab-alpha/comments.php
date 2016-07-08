@@ -34,6 +34,7 @@ endif;
 									'<label for="comment">' . __( 'Comment' ) . '</label>' .
 									'<textarea id="comment" class="comment-field" name="comment" placeholder="Write a comment..." cols="45" rows="1" required ></textarea>',
 		'comment_notes_after' 	=> '',
+		'id_form' 				=> 'commentform-' . $id,
 		'title_reply_before' 	=> '',
 		'title_reply' 			=> '',
 		'title_reply_after' 	=> '',
@@ -80,7 +81,7 @@ endif;
 		'page'              => '',
 		'per_page'          => '',
 		'avatar_size'       => 32,
-		'reverse_top_level' => true,
+		'reverse_top_level' => false,
 		'reverse_children'  => false,
 		'format'            => 'html5', 		// or 'xhtml' if no 'HTML5' theme support
 		'short_ping'        => false,   		// @since 3.6
