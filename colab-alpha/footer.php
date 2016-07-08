@@ -4,7 +4,8 @@
         </footer>
 
         <script src="<?php bloginfo('template_directory'); ?>/js/vendor/modernizr-2.8.3.min.js" async></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
         <script src="<?php bloginfo('template_directory'); ?>/js/plugins.js" defer></script>
         <script src="<?php bloginfo('template_directory'); ?>/js/main.js" defer></script>
 
@@ -23,6 +24,7 @@
         <script type="text/javascript">
             // AJAXified commenting system
             jQuery('document').ready(function($) {
+
                 var commentform = $('.comment-form'); // find the comment form
                 commentform.prepend('<div id="comment-status"></div>'); // add info panel before the form to provide feedback or errors
                 var statusdiv = $('#comment-status'); // define the infopanel
@@ -56,6 +58,8 @@
                     });
                     return false;
                 });
+
+                jQuery("#postForm").validate();
             });
 
             function addNewComment(commentform, respond) {
@@ -77,6 +81,8 @@
                     $(tempComment).insertAfter(respond);
                 }
             }
+
+
         </script>
 
         <?php wp_footer(); ?>
