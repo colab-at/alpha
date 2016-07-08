@@ -24,33 +24,58 @@
             // AJAXified commenting system
             jQuery('document').ready(function($) {
                 var commentform = $('#commentform'); // find the comment form
-                commentform.prepend('<div id="comment-status" ></div>'); // add info panel before the form to provide feedback or errors
-                var statusdiv=$('#comment-status'); // define the infopanel
+                commentform.prepend('<div id="comment-status"></div>'); // add info panel before the form to provide feedback or errors
+                var statusdiv = $('#comment-status'); // define the infopanel
 
                 commentform.submit(function() {
-                    //serialize and store form data in a variable
+                    // Add a status message
+                    statusdiv.html('<p>Please wait...</p>');
+                    // Serialize and store form data in a variable
                     var formdata = commentform.serialize();
-                    //Add a status message
-                    statusdiv.html('<p>Processing...</p>');
-                    //Extract action URL from commentform
+                    // Extract action URL from commentform
                     var formurl = commentform.attr('action');
-                    //Post Form with data
+                    // Post Form with data
                     $.ajax({
                         type: 'post',
                         url: formurl,
                         data: formdata,
                         error: function(XMLHttpRequest, textStatus, errorThrown) {
-                            statusdiv.html('<p class="wdpajax-error">You might have left one of the fields blank, or be posting too quickly</p>');
+                            statusdiv.html('<p class="comment-error">An error occurred. Please try again in a few seconds.</p>');
                         },
                         success: function(data, textStatus) {
-                            if (data == "success") statusdiv.html('<p class="ajax-success">Thanks for your comment. We appreciate your response.</p>');
-                            else statusdiv.html('<p class="ajax-error">Please wait a while before posting your next comment</p>');
+                            if (data == "success") {
+                                statusdiv.html('');
+                                addNewComment(commentform);
+                            }
+                            else {
+                                statusdiv.html('<p class="comment-error">An error occurred. Please try again in a few seconds.</p>');
+                            }
                             commentform.find('textarea[name=comment]').val('');
                         }
                     });
                     return false;
                 });
             });
+
+            function addNewComment(commentform) {
+                var depth = 1;
+                var commentParent = $(commentform).children('fieldset').children('#comment_parent').val();
+                if (commentParent != "0") depth++;
+                var tempComment = '<article class="comment byuser comment-author-admin bypostauthor even thread-even depth-' + depth + '" id="comment-temp">';
+                if (depth > 1) tempComment += '<div class="wrapper">';
+                tempComment += '<header class="author-meta comment">';
+                tempComment += $('#respond').children('form').children('.comment-meta').children('.author-thumb').html();
+                tempComment += $('#respond').children('form').children('.comment-meta').children('.meta').html();
+                tempComment += '</header>';
+                tempComment += '<p>' + $(commentform).children('#comment').val() + '</p>';
+                if (depth > 1) {
+                    tempComment += '</div>';
+                    $(tempComment).insertAfter('#respond');
+                }
+                else {
+                    $(tempComment).insertAfter('#comment-' + commentParent);
+                }
+            }
         </script>
 
         <?php wp_footer(); ?>
