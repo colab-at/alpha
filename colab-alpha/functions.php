@@ -30,10 +30,9 @@ function getPostsByCat( $category ) {
 	$posts = array();
 
 	$args = array(
-		'category_name'		=> $category,
-//		'meta_key'			=> 'menu_order',
-//		'orderby'			=> 'meta_value_num',
-    	'order'				=> 'desc',	
+		'category_name'	=> $category,
+		'orderby'				=> 'date',
+   	'order'					=> 'desc',	
 		'post_type'			=> 'post',
 		'post_status'		=> 'publish'
 	);
