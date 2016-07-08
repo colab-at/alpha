@@ -31,10 +31,10 @@ function getPostsByCat( $category ) {
 
 	$args = array(
 		'category_name'	=> $category,
-		'orderby'				=> 'date',
-   	'order'					=> 'desc',	
-		'post_type'			=> 'post',
-		'post_status'		=> 'publish'
+		'orderby'		=> 'date',
+   		'order'			=> 'desc',	
+		'post_type'		=> 'post',
+		'post_status'	=> 'publish'
 	);
 	$posts_query = get_posts( $args );
 

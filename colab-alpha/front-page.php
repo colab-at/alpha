@@ -16,37 +16,37 @@
 
 	        	<div class="post">
 
-							<form action="" id="postForm" method="POST">		 
-						    <fieldset>
+					<form action="" id="postForm" method="POST">		 
+					    <fieldset>
 					        <label for="postContent"><?php _e('Post Content:', 'framework') ?></label>
 					        <textarea name="postContent" id="postContent" rows="8" cols="30" class="required"></textarea>
-						    </fieldset>
-						    <fieldset>
+						</fieldset>
+						<fieldset>
 					        <input type="hidden" name="submitted" id="submitted" value="true" />
 					        <?php wp_nonce_field( 'post_nonce', 'post_nonce_field' ); ?>
 					        <button type="submit"><?php _e('Add Post', 'framework') ?></button>
-						    </fieldset>
-							</form>
+					    </fieldset>
+					</form>
 
-							<?php
-								if ( isset( $_POST['submitted'] ) && isset( $_POST['post_nonce_field'] ) && wp_verify_nonce( $_POST['post_nonce_field'], 'post_nonce' ) ) {
-									$post_information = array(
-								    'post_title' => substr($_POST['postContent'], 0, 20),
-								    'post_content' => $_POST['postContent'],
-								    'post_type' => 'post',
-								    'post_status' => 'publish'
-									);
-									$post_id = wp_insert_post($post_information);
-									if ($post_id) {
-										$catId = get_cat_ID('discussion');
-										wp_set_post_terms($post_id, array($catId), 'category', true);
-								    wp_redirect(home_url());
-								    exit;
-									}
-								}
-							?>
+					<?php
+						if ( isset( $_POST['submitted'] ) && isset( $_POST['post_nonce_field'] ) && wp_verify_nonce( $_POST['post_nonce_field'], 'post_nonce' ) ) {
+							$post_information = array(
+						    'post_title' => substr($_POST['postContent'], 0, 20),
+						    'post_content' => $_POST['postContent'],
+						    'post_type' => 'post',
+						    'post_status' => 'publish'
+							);
+							$post_id = wp_insert_post($post_information);
+							if ($post_id) {
+								$catId = get_cat_ID('discussion');
+								wp_set_post_terms($post_id, array($catId), 'category', true);
+						    wp_redirect(home_url());
+						    exit;
+							}
+						}
+					?>
 
-	        	</div>	
+	        	</div>
 
 	        	<?php
 				$posts = getPostsByCat( 'discussion' );
