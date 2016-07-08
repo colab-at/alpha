@@ -17,21 +17,22 @@
 	        	<?php
 				$posts = getPostsByCat( 'discussion' );
 				foreach ( $posts as $post ) :
-					$id =		$post['id'];
-					$date =		$post['date'];
-					$title =	$post['title'];
-					$name = 	$post['name'];
-					$image = 	$post['image']['full'];
-					$author = 	$post['author'];
-					$content = 	$post['content'];
+					$id =			$post['id'];
+					$date =			$post['date'];
+					$title =		$post['title'];
+					$name = 		$post['name'];
+					$image = 		$post['image']['full'];
+					$author = 		$post['author'];
+					$author_name = 	$post['author_name'];
+					$content = 		$post['content'];
 				?>
 
 	        	<article <?php post_class() ?> >
 
 	        		<header class="author-meta post">
-						<span class="author-thumb"><?php print get_avatar( $post, '48'); ?></span>
+						<span class="author-thumb"><?php print get_avatar( $author, 38 ); ?></span>
 						<span class="meta">
-							<a class="author" rel="author" href="#"><?php print $author; ?></a>
+							<a class="author" rel="author" href="#"><?php print $author_name; ?></a>
 							<time datetime="<?php  ?>"><?php print timeAgo($date); ?> ago</time>
 						</span>
 					</header>

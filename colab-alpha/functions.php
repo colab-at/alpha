@@ -33,7 +33,7 @@ function getPostsByCat( $category ) {
 		'category_name'		=> $category,
 //		'meta_key'			=> 'menu_order',
 //		'orderby'			=> 'meta_value_num',
-    	'order'				=> 'asc',	
+    	'order'				=> 'desc',	
 		'post_type'			=> 'post',
 		'post_status'		=> 'publish'
 	);
@@ -49,7 +49,8 @@ function getPostsByCat( $category ) {
 		$posts[$post->ID]['name'] = 		$post->post_name;
 		$posts[$post->ID]['url'] = 			get_permalink( $post->ID );
 		$posts[$post->ID]['image'] = 		getFeaturedImage( get_post_thumbnail_id( $post->ID ) );
-		$posts[$post->ID]['author'] = 		get_the_author_meta( 'display_name', $post->post_author );
+		$posts[$post->ID]['author'] = 		$post->post_author;
+		$posts[$post->ID]['author_name'] = 	get_the_author_meta( 'display_name', $post->post_author );
 		$posts[$post->ID]['content'] = 		apply_filters('the_content', $post->post_content);
 		$posts[$post->ID]['revisions'] = 	wp_get_post_revisions( $post->ID, array('numberposts' => 3) );
 

@@ -96,10 +96,18 @@ section.project {
     font-size: 1.1rem; }
   section.project section.discussion {
     width: 70%;
-    float: left; }
+    float: left;
+    background-color: #f5f5f5; }
     section.project section.discussion article.post {
       margin: 2.5rem;
-      border-bottom: 1px solid #ccc; }
+      background-color: #fff;
+      padding: 1.25rem;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      -moz-box-shadow: #ddd 0 0 3px;
+      -webkit-box-shadow: #ddd 0 0 3px;
+      box-shadow: #ddd 0 0 3px; }
       section.project section.discussion article.post header.author-meta {
         overflow: hidden;
         *zoom: 1;
@@ -116,11 +124,12 @@ section.project {
         section.project section.discussion article.post header.author-meta span.meta {
           display: block;
           float: left;
-          margin-left: 0.5em;
-          padding-top: 0.2em; }
+          margin-left: 0.5em; }
           section.project section.discussion article.post header.author-meta span.meta a.author {
             display: block;
-            font-size: 1.1rem; }
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: #0b87c3; }
           section.project section.discussion article.post header.author-meta span.meta time {
             display: block;
             font-size: 0.9rem;
@@ -129,9 +138,12 @@ section.project {
       section.project section.discussion article.post div.content {
         overflow: hidden;
         *zoom: 1;
-        margin-bottom: 2em; }
+        margin-bottom: 2em;
+        border-bottom: 1px solid #ddd; }
         section.project section.discussion article.post div.content p {
-          font-size: 1.1rem; }
+          font-size: 1.1rem;
+          line-height: 1.3em;
+          padding-bottom: 1em; }
       section.project section.discussion article.post section.comments div.comment-respond {
         overflow: hidden;
         *zoom: 1;
@@ -153,7 +165,7 @@ section.project {
           float: left;
           border: 1px solid #ddd;
           line-height: 2em;
-          width: 80%;
+          width: 70%;
           margin-left: 1em; }
       section.project section.discussion article.post section.comments article.comment {
         margin-bottom: 1em; }
