@@ -36,7 +36,9 @@
 						</span>
 					</header>
 
-	        		<?php print $content ?>
+	        		<div class="content">
+	        			<?php print $content ?>
+	        		</div>
 
 	        		<?php global $withcomments; $withcomments = true; comments_template(); ?>
 	        	</article>

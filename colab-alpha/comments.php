@@ -6,7 +6,7 @@ endif;
 
 <section class="comments">
 
-	<h3>Comments</h3>
+	<!-- <h3>Comments</h3> -->
 
 <?php if ( is_user_logged_in() ) : ?>
 
@@ -24,14 +24,10 @@ endif;
 		'logged_in_as' 			=> '',
 		'comment_notes_before' 	=> '',
 		'comment_field' 		=> 	'<div class="comment-meta">' .
-									'	<span class="author-thumb">' .  get_avatar( $current_user->ID, '32') . '</span>' .
-									'	<span class="meta">' .
-									'		<a class="author" rel="author" href="#">' .  $current_user->display_name . '</a>' .
-									'		<time>' . __('Right now') . '</time>' . 
-									'	</span>' . 
+									'	<span class="author-thumb">' .  get_avatar( $current_user->ID, '32') . '</span>' . 
 									'</div>' . 
 									'<label for="comment">' . __( 'Comment' ) . '</label>' .
-									'<textarea id="comment" name="comment" placeholder="Write a comment..." cols="45" rows="1" required ></textarea>',
+									'<textarea id="comment" class="comment-field" name="comment" placeholder="Write a comment..." cols="45" rows="1" required ></textarea>',
 		'comment_notes_after' 	=> '',
 		'title_reply_before' 	=> '',
 		'title_reply' 			=> '',
@@ -80,7 +76,7 @@ endif;
 		'per_page'          => '',
 		'avatar_size'       => 32,
 		'reverse_top_level' => true,
-		'reverse_children'  => false,
+		'reverse_children'  => true,
 		'format'            => 'html5', 		// or 'xhtml' if no 'HTML5' theme support
 		'short_ping'        => false,   		// @since 3.6
 	    'echo'              => true 			// boolean, default is true

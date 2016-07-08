@@ -92,31 +92,77 @@ section.project {
       bottom: 0; }
   section.project section header.tab {
     line-height: 3rem;
-    text-indent: 1em; }
+    text-indent: 1em;
+    font-size: 1.1rem; }
   section.project section.discussion {
     width: 70%;
     float: left; }
     section.project section.discussion article.post {
-      margin-bottom: 2.5rem; }
+      margin: 2.5rem;
+      border-bottom: 1px solid #ccc; }
       section.project section.discussion article.post header.author-meta {
         overflow: hidden;
-        *zoom: 1; }
+        *zoom: 1;
+        margin-bottom: 1em; }
         section.project section.discussion article.post header.author-meta span.author-thumb {
           display: block;
           overflow: hidden;
           -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
           border-radius: 50%;
-          float: left;
-          background-color: #ccc; }
+          float: left; }
           section.project section.discussion article.post header.author-meta span.author-thumb img {
             width: inherit !important; }
-        section.project section.discussion article.post header.author-meta span.meta a.author {
+        section.project section.discussion article.post header.author-meta span.meta {
+          display: block;
+          float: left;
+          margin-left: 0.5em;
+          padding-top: 0.2em; }
+          section.project section.discussion article.post header.author-meta span.meta a.author {
+            display: block;
+            font-size: 1.1rem; }
+          section.project section.discussion article.post header.author-meta span.meta time {
+            display: block;
+            font-size: 0.9rem;
+            padding-top: 0.3em;
+            color: #999; }
+      section.project section.discussion article.post div.content {
+        overflow: hidden;
+        *zoom: 1;
+        margin-bottom: 2em; }
+        section.project section.discussion article.post div.content p {
           font-size: 1.1rem; }
-      section.project section.discussion article.post section.comments {
-        margin-top: 1em; }
-        section.project section.discussion article.post section.comments article.comment {
-          margin-bottom: 1em; }
+      section.project section.discussion article.post section.comments div.comment-respond {
+        overflow: hidden;
+        *zoom: 1;
+        margin-bottom: 1em; }
+        section.project section.discussion article.post section.comments div.comment-respond form.comment-form div.comment-meta {
+          display: block;
+          float: left; }
+          section.project section.discussion article.post section.comments div.comment-respond form.comment-form div.comment-meta span.author-thumb {
+            display: block;
+            overflow: hidden;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            float: left; }
+            section.project section.discussion article.post section.comments div.comment-respond form.comment-form div.comment-meta span.author-thumb img {
+              width: inherit !important; }
+        section.project section.discussion article.post section.comments div.comment-respond form.comment-form textarea.comment-field {
+          display: block;
+          float: left;
+          border: 1px solid #ddd;
+          line-height: 2em;
+          width: 80%;
+          margin-left: 1em; }
+      section.project section.discussion article.post section.comments article.comment {
+        margin-bottom: 1em; }
+        section.project section.discussion article.post section.comments article.comment header.author-meta span.meta a.author {
+          font-size: 0.9rem;
+          float: left; }
+        section.project section.discussion article.post section.comments article.comment header.author-meta span.meta time {
+          font-size: 0.9rem;
+          float: left; }
   section.project section.about {
     width: 30%;
     float: left; }

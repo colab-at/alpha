@@ -11,7 +11,7 @@ html, body {
 html {
 	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
 	font-size: 100%;
-	color: #333;
+	color: $grey-darkest;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -40,6 +40,7 @@ section.project {
 		header.tab {
 			line-height: 3rem;
 			text-indent: 1em;
+			font-size: $font-normal;
 		}
 	}
 
@@ -49,17 +50,18 @@ section.project {
 
 		article.post {
 
-			margin-bottom: $padding-normal;
+			margin: $padding-normal;
+			border-bottom: 1px solid $grey;
 
 			header.author-meta {
 				@include clearfix;
+				margin-bottom: 1em;
 
 				span.author-thumb {
 					display: block;
 					overflow: hidden;
 					@include border-radius(50%);
 					float: left;
-					background-color: $grey;
 				
 					img {
 						width: inherit !important;
@@ -67,18 +69,92 @@ section.project {
 				}
 
 				span.meta {
+					display: block;
+					float: left;
+					margin-left: 0.5em;
+					padding-top: 0.2em;
+
 					a.author {
+						display: block;
 						font-size: $font-normal;
+						
+
 					}
+					time {
+						display: block;
+						font-size: $font-smaller;
+						padding-top: 0.3em;
+						color: $grey-dark;
+					}
+				}
+			}
+
+			div.content {
+				@include clearfix;
+				margin-bottom: 2em;
+
+				p {
+					font-size: $font-normal;
 				}
 			}
 
 			section.comments {
 
-				margin-top: 1em;
+				div.comment-respond {
+					@include clearfix;
+					margin-bottom: 1em;
+
+					form.comment-form {
+						div.comment-meta {
+							display: block;
+							float: left;
+
+							span.author-thumb {
+								display: block;
+								overflow: hidden;
+								@include border-radius(50%);
+								float: left;
+							
+								img {
+									width: inherit !important;
+								}
+							}
+
+						}
+						textarea.comment-field {
+							display: block;
+							float: left;
+							border: 1px solid $grey-light;
+							line-height: 2em;
+							width: 80%;
+							margin-left: 1em;
+						}
+					}
+				}
 
 				article.comment {
 					margin-bottom: 1em;
+
+					header.author-meta {
+
+						span.author-thumb {
+
+						}
+
+						span.meta {
+
+							a.author {
+								font-size: $font-smaller;
+								float: left;
+							}
+							time {
+								font-size: $font-smaller;
+								float: left;
+
+							}
+						}
+					}
+
 				}
 			}
 		}
