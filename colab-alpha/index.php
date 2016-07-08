@@ -1,0 +1,1 @@
+<?php # We use front-page.php ?>

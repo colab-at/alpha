@@ -67,7 +67,9 @@ section.project {
 				}
 
 				span.meta {
-
+					a.author {
+						font-size: $font-normal;
+					}
 				}
 			}
 
@@ -118,7 +120,6 @@ footer.main-footer {
 
 
 // FORMS
-
 form, .form {
 	input, 
 	button, 
@@ -155,14 +156,14 @@ form, .form {
 		font-weight: $medium;
 		color: $white;
 
-		background-color: $blue;
-		border: $blue 1.5px solid;
+		background-color: $grey;
+		border: $grey 1.5px solid;
 		@include border-radius($radius-small);
 		cursor: pointer;
 
 		&:hover {
-			background-color: $blue-dark;
-			border-color: $blue-dark;
+			background-color: $grey-dark;
+			border-color: $grey-dark;
 		}
 	}
 
