@@ -3,6 +3,168 @@
 @import "compass";
 @import "compass/reset";
 
-h1 {
-	font-size: 10em;
+//
+html, body {
+	height: 100%;
+}
+
+html {
+	font-family: "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+	font-size: 100%;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+}
+
+//
+section.project {
+	width: 80%;
+	float: right;
+
+	header.project-header {
+		background-color: $grey-lighter;
+		height: 256px;
+		
+		position: relative;
+
+		h1.project-name {
+			font-size: $font-big;
+			padding: $padding-normal;
+
+			position: absolute;
+			left: 0; bottom: 0;
+
+		}
+	}
+
+	section {
+		header.tab {
+			line-height: 3rem;
+			text-indent: 1em;
+		}
+	}
+
+	section.discussion {
+		width: 70%;
+		float: left;
+
+		article.post {
+
+			margin-bottom: $padding-normal;
+
+			header.author-meta {
+				@include clearfix;
+
+				span.author-thumb {
+					display: block;
+					overflow: hidden;
+					@include border-radius(50%);
+					float: left;
+					background-color: $grey;
+				
+					img {
+						width: inherit !important;
+					}
+				}
+
+				span.meta {
+
+				}
+			}
+
+			section.comments {
+
+				margin-top: 1em;
+
+				article.comment {
+					margin-bottom: 1em;
+				}
+			}
+		}
+	}
+
+	section.about {
+		width: 30%;
+		float: left;
+	}
+
+}
+
+section.sidebar {
+	width: 20%;
+	float: right;
+
+	h1.logo {
+
+		margin: $padding-normal; 
+		
+		a {
+			display: block;
+			width: $col;
+			line-height: $col;
+
+			img {
+				width: inherit;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+footer.main-footer {
+	width: 100%;
+	height: 300px;
+	@include clearfix;
+}
+
+
+// FORMS
+
+form, .form {
+	input, 
+	button, 
+	textarea {
+		font: inherit;
+		display: block;
+		color: #333;
+		line-height: 2.5rem;
+		padding: 0 0.7rem;
+		border: none;
+		outline: none;
+	}
+
+	textarea { 
+		line-height: 1.5em;
+		resize: none;
+	}
+
+	legend,
+	label {
+		display: none;
+	}
+
+	input[type="submit"],
+	input[type="button"],
+	button {
+		display: block;
+		float: right;
+		line-height: 2em;
+		padding: 0 1em;
+
+		text-decoration: none;
+		font-size: $font-small;
+		font-weight: $medium;
+		color: $white;
+
+		background-color: $blue;
+		border: $blue 1.5px solid;
+		@include border-radius($radius-small);
+		cursor: pointer;
+
+		&:hover {
+			background-color: $blue-dark;
+			border-color: $blue-dark;
+		}
+	}
+
+
 }

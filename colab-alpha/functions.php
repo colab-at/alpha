@@ -33,7 +33,7 @@ function getPostsByCat( $category ) {
 		'category_name'		=> $category,
 //		'meta_key'			=> 'menu_order',
 //		'orderby'			=> 'meta_value_num',
-    'order'				=> 'asc',	
+    	'order'				=> 'asc',	
 		'post_type'			=> 'post',
 		'post_status'		=> 'publish'
 	);
@@ -41,7 +41,10 @@ function getPostsByCat( $category ) {
 
 	foreach ( $posts_query as $post ) :
 
+		//var_dump($post);
+
 		$posts[$post->ID]['id'] = 			$post->ID;
+		$posts[$post->ID]['date'] = 		$post->post_date;
 		$posts[$post->ID]['title'] = 		$post->post_title;
 		$posts[$post->ID]['name'] = 		$post->post_name;
 		$posts[$post->ID]['url'] = 			get_permalink( $post->ID );
