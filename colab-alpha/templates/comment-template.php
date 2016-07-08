@@ -1,8 +1,7 @@
-<?php if ( $comment->comment_parent == 0 ) : ?>
 <article <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
 
 	<header class="author-meta">
-		<span class="author-thumb"><?php print get_avatar( $comment, '32'); ?></span>
+		<span class="author-thumb"><?php print get_avatar( $comment, '38'); ?></span>
 		<span class="meta">
 			<a class="author" rel="author" href="#"><?php print $comment->comment_author; ?> </a>
 			<time datetime="<?php echo $comment->comment_date; ?>"><?php print timeAgo($comment->comment_date); ?> ago</time>
@@ -19,23 +18,3 @@
 <?php endif; ?>
 
 </article>
-
-<?php else : // Show reply template ?>
-
-<article <?php comment_class() ?> id="comment-<?php comment_ID() ?>">
-	<div class="wrapper">
-
-		<span class="author-thumb"><?php print get_avatar( $comment, '32'); ?></span>
-
-		<header class="comment-meta">
-			<a class="author" rel="author" href="#"><?php print $comment->comment_author; ?> </a>
-			<time datetime="<?php echo $comment->comment_date; ?>"><?php print timeAgo($comment->comment_date); ?> ago</time>
-			<?php edit_comment_link( __( 'Edit' ), '  ', '' ); ?>
-		</header>
-
-		<?php comment_text(); ?>
-
-	</div>
-</article>
-
-<?php endif; ?>

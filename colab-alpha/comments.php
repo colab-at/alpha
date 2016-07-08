@@ -62,13 +62,12 @@ endif;
 <?php 
 	
 	$comments = get_comments(array(
-		'post_id' => $id,
-		'status' => 'approve'
+		'post_id' 	=> $id,
+		'status' 	=> 'approve',
+		'number' 	=> '6' //Number of comments
 	));
 
-	if ( have_comments() ) : 
-
-?>
+	if ( have_comments() ) : ?>
 
 	<?php $args = array(
 		'walker'            => null,

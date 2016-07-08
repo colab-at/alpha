@@ -48,10 +48,15 @@ section.project {
 		width: 70%;
 		float: left;
 
+		background-color: $grey-lightest;
+
 		article.post {
 
 			margin: $padding-normal;
-			border-bottom: 1px solid $grey;
+			background-color: $white;
+			padding: $padding-small;
+			@include border-radius($radius-small);
+			@include box-shadow($grey-light 0 0 3px);
 
 			header.author-meta {
 				@include clearfix;
@@ -72,12 +77,12 @@ section.project {
 					display: block;
 					float: left;
 					margin-left: 0.5em;
-					padding-top: 0.2em;
 
 					a.author {
 						display: block;
 						font-size: $font-normal;
-						
+						text-decoration: none;
+						color: $blue-dark;
 
 					}
 					time {
@@ -92,9 +97,12 @@ section.project {
 			div.content {
 				@include clearfix;
 				margin-bottom: 2em;
+				border-bottom: 1px solid $grey-light;
 
 				p {
 					font-size: $font-normal;
+					line-height: 1.3em;
+					padding-bottom: 1em;
 				}
 			}
 
@@ -126,7 +134,7 @@ section.project {
 							float: left;
 							border: 1px solid $grey-light;
 							line-height: 2em;
-							width: 80%;
+							width: 70%;
 							margin-left: 1em;
 						}
 					}
