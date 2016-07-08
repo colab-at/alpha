@@ -60,13 +60,13 @@
 
             function addNewComment(commentform, respond) {
                 var depth = 1;
-                var commentParent = commentform.children('fieldset').children('#comment_parent').val();
+                var commentParent = commentform.find('#comment_parent').val();
                 if (commentParent != "0") depth++;
                 var tempComment = '<article class="comment byuser comment-author-admin bypostauthor even thread-even depth-' + depth + '" id="comment-temp">';
                 if (depth > 1) tempComment += '<div class="wrapper">';
                 tempComment += '<header class="author-meta comment">';
-                tempComment += respond.children('form').children('.comment-meta').children('.author-thumb').html();
-                tempComment += respond.children('form').children('.comment-meta').children('.meta').html();
+                tempComment += respond.find('.author-thumb').html();
+                tempComment += respond.find('.meta').html();
                 tempComment += '</header>';
                 tempComment += '<p>' + commentform.children('#comment').val() + '</p>';
                 if (depth > 1) {
